@@ -1,0 +1,30 @@
+# Drag-drop this folder onto https://app.netlify.com/drop
+# or: ntl deploy --prod --dir=. --site wisdomtwin-deck
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*.pdf"
+  [headers.values]
+    Content-Type = "application/pdf"
+    Cache-Control = "public, max-age=300"
+
+[[redirects]]
+  from = "/WisdomTwin-E4-Investor-Deck-2026-08-10.pdf"
+  to = "/WisdomTwin-Investor-Deck.pdf"
+  status = 200
+
+[[redirects]]
+  from = "/WisdomTwin-E4-Investor-Deck-2026-08-11.pdf"
+  to = "/WisdomTwin-Investor-Deck.pdf"
+  status = 200
+
+[[redirects]]
+  from = "/deck.pdf"
+  to = "/WisdomTwin-Investor-Deck.pdf"
+  status = 200
+
+[[redirects]]
+  from = "/wisdomtwin-deck.pdf"
+  to = "/WisdomTwin-Investor-Deck.pdf"
+  status = 200

@@ -1,0 +1,16 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*).pdf",
+      "headers": [{ "key": "Content-Type", "value": "application/pdf" }]
+    }
+  ],
+  "rewrites": [
+    { "source": "/WisdomTwin-E4-Investor-Deck-2026-08-10.pdf", "destination": "/WisdomTwin-Investor-Deck.pdf" },
+    { "source": "/WisdomTwin-E4-Investor-Deck-2026-08-11.pdf", "destination": "/WisdomTwin-Investor-Deck.pdf" },
+    { "source": "/deck.pdf", "destination": "/WisdomTwin-Investor-Deck.pdf" },
+    { "source": "/wisdomtwin-deck.pdf", "destination": "/WisdomTwin-Investor-Deck.pdf" }
+  ]
+}

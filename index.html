@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>WisdomTwin.ai - E4 Investor Deck - We Sell Speed</title>
+<meta name="hz:slide-selector" content=".slide" />
+<meta name="hz:canvas-width" content="1920" />
+<meta name="hz:canvas-height" content="1080" />
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: 1920px 1080px; margin: 0; }
+body { background: #e8eaef; font-family: -apple-system, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.slide {
+  position: relative; width: 1920px; height: 1080px; overflow: hidden;
+  background: #f7f8fb; color: #12213f; page-break-after: always; padding: 84px 96px;
+}
+.slide.dark { background: #0e1c36; color: #f2f5fa; }
+.eyebrow { font-size: 26px; font-weight: 700; letter-spacing: 4px; color: #0e7c7b; text-transform: uppercase; margin-bottom: 26px; }
+.dark .eyebrow { color: #5cd6c4; }
+h1 { font-size: 84px; line-height: 1.06; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 30px; }
+h1 .accent { color: #0e7c7b; }
+.dark h1 .accent { color: #5cd6c4; }
+.sub { font-size: 34px; line-height: 1.4; font-weight: 400; color: #3c4a66; max-width: 1500px; }
+.dark .sub { color: #c3cede; }
+.cards { display: flex; gap: 32px; margin-top: 48px; }
+.card { flex: 1; background: #ffffff; border: 1px solid #dde3ee; border-radius: 18px; padding: 40px 38px; box-shadow: 0 2px 10px rgba(18,33,63,0.06); }
+.card h3 { font-size: 33px; font-weight: 750; margin-bottom: 16px; color: #12213f; }
+.card p { font-size: 26px; line-height: 1.42; color: #3c4a66; }
+.card .tag { display: inline-block; margin-top: 22px; font-size: 20px; font-weight: 700; letter-spacing: 1.5px; color: #0e7c7b; text-transform: uppercase; background: #e5f4f2; border-radius: 8px; padding: 8px 14px; }
+.card.hero { background: #0e1c36; border-color: #0e1c36; }
+.card.hero h3 { color: #ffffff; }
+.card.hero p { color: #c3cede; }
+.card.hero .tag { background: #17324f; color: #5cd6c4; }
+.tiles { display: flex; gap: 32px; margin-top: 46px; }
+.tile { flex: 1; background: #0e1c36; color: #ffffff; border-radius: 18px; padding: 36px; text-align: center; }
+.tile .num { font-size: 78px; font-weight: 800; color: #5cd6c4; line-height: 1; }
+.tile .lbl { font-size: 23px; margin-top: 14px; color: #c3cede; line-height: 1.3; }
+.kicker { margin-top: 46px; background: #12213f; color: #ffffff; border-radius: 14px; padding: 28px 36px; font-size: 32px; font-weight: 650; }
+.footerbar { position: absolute; left: 96px; right: 96px; bottom: 48px; display: flex; justify-content: space-between; align-items: center; font-size: 22px; font-weight: 600; color: #5a6a88; border-top: 2px solid #dde3ee; padding-top: 22px; }
+.dark .footerbar { color: #8fa1bd; border-top-color: #23375a; }
+table.matrix { width: 100%; border-collapse: collapse; margin-top: 40px; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 10px rgba(18,33,63,0.06); }
+table.matrix th, table.matrix td { padding: 22px 26px; font-size: 25px; text-align: left; border-bottom: 1px solid #e6eaf2; }
+table.matrix th { background: #12213f; color: #ffffff; font-weight: 700; font-size: 24px; }
+table.matrix td.no { color: #a04545; font-weight: 600; }
+table.matrix td.yes { color: #0e7c7b; font-weight: 800; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 44px; }
+.pill { display: inline-block; background: #e5f4f2; color: #0e7c7b; font-size: 24px; font-weight: 700; border-radius: 999px; padding: 12px 26px; margin: 0 14px 14px 0; }
+.dark .pill { background: #17324f; color: #5cd6c4; }
+ul.big { margin-top: 34px; }
+ul.big li { font-size: 30px; line-height: 1.45; color: #2c3a58; margin-bottom: 24px; list-style: none; padding-left: 46px; position: relative; }
+ul.big li::before { content: ""; position: absolute; left: 0; top: 14px; width: 18px; height: 18px; border-radius: 5px; background: #0e7c7b; }
+.dark ul.big li { color: #d4dcea; }
+.dark ul.big li::before { background: #5cd6c4; }
+.quote { margin-top: 42px; border-left: 8px solid #0e7c7b; background: #ffffff; border-radius: 0 16px 16px 0; padding: 32px 40px; font-size: 32px; line-height: 1.42; font-weight: 600; color: #12213f; box-shadow: 0 2px 10px rgba(18,33,63,0.06); }
+.fourbox { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.fourbox .bx { background: #ffffff; border: 1px solid #dde3ee; border-radius: 14px; padding: 26px 28px; }
+.fourbox .bx .k { font-size: 20px; font-weight: 800; letter-spacing: 2px; color: #0e7c7b; text-transform: uppercase; margin-bottom: 10px; }
+.fourbox .bx .v { font-size: 29px; font-weight: 700; color: #12213f; line-height: 1.25; }
+.steps { display: flex; gap: 30px; margin-top: 46px; }
+.step { flex: 1; background: #ffffff; border: 1px solid #dde3ee; border-radius: 18px; padding: 36px; position: relative; }
+.step .n { position: absolute; top: -24px; left: 32px; min-width: 52px; width: auto; padding: 0 14px; height: 52px; border-radius: 999px; white-space: nowrap; background: #0e7c7b; color: #ffffff; font-size: 27px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.step h3 { font-size: 31px; font-weight: 750; margin: 14px 0 12px; }
+.step p { font-size: 25px; line-height: 1.4; color: #3c4a66; }
+.label-note { display: inline-block; margin-top: 20px; font-size: 21px; font-weight: 700; color: #7a5b12; background: #fdf3d7; border-radius: 8px; padding: 8px 16px; }
+.proofstrip { margin-top: 44px; display: flex; align-items: center; gap: 28px; background: #0e1c36; border-radius: 16px; padding: 30px 38px; }
+.proofstrip .badge { flex-shrink: 0; font-size: 21px; font-weight: 800; letter-spacing: 1.5px; color: #0e1c36; background: #5cd6c4; border-radius: 8px; padding: 10px 16px; text-transform: uppercase; }
+.proofstrip p { font-size: 27px; line-height: 1.4; color: #f2f5fa; font-weight: 550; }
+table.tier { width: 100%; border-collapse: collapse; margin-top: 40px; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 10px rgba(18,33,63,0.06); }
+table.tier th, table.tier td { padding: 26px 30px; font-size: 28px; text-align: left; border-bottom: 1px solid #e6eaf2; }
+table.tier th { background: #12213f; color: #ffffff; font-weight: 700; }
+table.tier td.money { font-weight: 800; color: #0e7c7b; font-size: 32px; }
+.flow { display: flex; align-items: center; gap: 14px; margin-top: 42px; flex-wrap: wrap; }
+.flow .fbox { background: #ffffff; border: 2px solid #0e7c7b; color: #12213f; border-radius: 12px; padding: 18px 26px; font-size: 26px; font-weight: 700; }
+.flow .arr { font-size: 30px; color: #0e7c7b; font-weight: 800; }
+.nomeet { display: inline-flex; align-items: center; gap: 18px; margin-top: 36px; }
+.nomeet .circ { width: 74px; height: 74px; border: 8px solid #c0392b; border-radius: 50%; position: relative; flex-shrink: 0; }
+.nomeet .circ::after { content: ""; position: absolute; left: -6px; top: 26px; width: 74px; height: 8px; background: #c0392b; transform: rotate(-45deg); }
+.nomeet span { font-size: 33px; font-weight: 800; color: #12213f; }
+.dark .nomeet span { color: #ffffff; }
+.cols2 { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; margin-top: 20px; }
+.team { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 40px; }
+.team .member { background: #ffffff; border: 1px solid #dde3ee; border-radius: 18px; padding: 38px; }
+.team .member h3 { font-size: 34px; font-weight: 800; }
+.team .member .role { font-size: 24px; color: #0e7c7b; font-weight: 700; margin: 6px 0 18px; }
+.team .member li { font-size: 24px; line-height: 1.42; color: #3c4a66; margin-bottom: 12px; margin-left: 26px; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 - TITLE -->
+<div class="slide dark" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">The Judgment Platform for Regulated Enterprises</div>
+  <h1 style="font-size:110px; margin-top:60px;">We sell speed<br /><span class="accent">at AI-native pace.</span></h1>
+  <p class="sub" style="margin-top:36px; font-size:38px;">WisdomTwin is the Judgment Platform for regulated enterprises. With one press you get a live audio huddle with your management team 24/7/365, easier and faster than Zoom, and async wisdom twins trained on decades of executive judgment deliver decisions in minutes with full audit trails.</p>
+  <div style="margin-top:56px;">
+    <span class="pill">WISDOMTWIN.AI</span>
+    <span class="pill">DEMO: WISDOMTWIN.AI/DEMO (1-4 MIN AUDIO HUDDLES)</span>
+    <span class="pill">SF-TORONTO + DUBAI-TORONTO = 24/7 BY DESIGN</span>
+  </div>
+  <div class="footerbar"><span>roman@wisdomtwin.ai</span><span>PRE-SEED | $1M USD SAFE</span></div>
+</div>
+
+<!-- SLIDE 2 - PROBLEM -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Problem</div>
+  <h1>Companies don't lose documents when people leave.<br /><span class="accent">They lose judgment.</span></h1>
+  <ul class="big">
+    <li><b>Corporate Alzheimer's:</b> 10,000 Americans turn 65 every day. Judgment walks out the door with no transfer. (US Census)</li>
+    <li>Policies record <b>what</b> was decided. Never <b>why</b>. Principles, exceptions, thresholds, and escalation rules live in heads.</li>
+    <li>Regulated teams cannot paste consequential work into a public chatbot, so <b>meetings remain the bottleneck</b>.</li>
+  </ul>
+  <div class="tiles">
+    <div class="tile"><div class="num">275</div><div class="lbl">interruptions per employee per day: 117 emails + 153 Teams messages (Microsoft Work Trend Index 2025)</div></div>
+    <div class="tile"><div class="num">57%</div><div class="lbl">of the day communicating about work vs 43% creating (Microsoft Work Trend Index 2023)</div></div>
+    <div class="tile"><div class="num">10,000</div><div class="lbl">Americans retire daily. The judgment walks out. (US Census)</div></div>
+  </div>
+  <div class="kicker">Result: decisions that should take minutes wait days.</div>
+</div>
+
+<!-- SLIDE 3 - MISSION -->
+<div class="slide dark" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Mission</div>
+  <h1>Expand human working memory<br />from <span class="accent">7 items to 1 million</span>, and unleash it 24/7.</h1>
+  <p class="sub">Your brain holds about 7 items in working memory. An executive's judgment is bottlenecked into a 40-hour, 9-to-5 week. Pair each role with a wisdom twin holding a million-token context of that role's decisions, and the week changes shape.</p>
+  <div class="tiles" style="margin-top:70px;">
+    <div class="tile" style="background:#17324f;"><div class="num">7 &rarr; 1M</div><div class="lbl">working memory items</div></div>
+    <div class="tile" style="background:#17324f;"><div class="num">40h &rarr; 120h</div><div class="lbl">judgment availability per week</div></div>
+    <div class="tile" style="background:#17324f;"><div class="num">3X</div><div class="lbl">speed advantage</div></div>
+  </div>
+  <span class="label-note">Design targets, not measured pilot metrics.</span>
+  <div class="footerbar"><span>We don't sell copilots. We sell speed.</span><span>WISDOMTWIN.AI</span></div>
+</div>
+
+<!-- SLIDE 4 - CATEGORY -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Category Creation</div>
+  <h1>Asynchronous management:<br /><span class="accent">for the first time, a practical operating model.</span></h1>
+  <div class="cols2">
+    <div>
+      <ul class="big">
+        <li><b>Zoom didn't invent video calls. Skype did.</b> Zoom killed friction and owned the category.</li>
+        <li>Email, docs, and voice memos tried async leadership. Clunky, incomplete, no judgment layer, no governance.</li>
+        <li><b>WisdomTwin makes it real. We are the Zoom for management.</b></li>
+      </ul>
+      <div class="quote">Salesforce said NO SOFTWARE and created SaaS.<br />We say NO MEETINGS: your twin attends so you don't have to.</div>
+    </div>
+    <div>
+      <div class="fourbox">
+        <div class="bx"><div class="k">Commercial Outcome</div><div class="v">We sell speed</div></div>
+        <div class="bx"><div class="k">Category</div><div class="v">Asynchronous management</div></div>
+        <div class="bx"><div class="k">Product</div><div class="v">The Judgment Platform</div></div>
+        <div class="bx"><div class="k">Why the buyer can say yes</div><div class="v">Evidence, permissions, audit, human override</div></div>
+      </div>
+      <div class="flow" style="margin-top:34px;">
+        <div class="fbox" style="border-color:#a04545; color:#a04545;">Book meeting</div><span class="arr" style="color:#a04545;">&rarr;</span>
+        <div class="fbox" style="border-color:#a04545; color:#a04545;">Hunt docs</div><span class="arr" style="color:#a04545;">&rarr;</span>
+        <div class="fbox" style="border-color:#a04545; color:#a04545;">Wait days</div>
+      </div>
+      <div class="flow" style="margin-top:16px;">
+        <div class="fbox">One press</div><span class="arr">&rarr;</span>
+        <div class="fbox">Context live</div><span class="arr">&rarr;</span>
+        <div class="fbox">Decision moves</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4B - WHY NOW -->
+<div class="slide dark" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Why Now</div>
+  <h1>Leadership latency has not kept pace with model speed.<br /><span class="accent">The gap is the opportunity.</span></h1>
+  <ul class="big" style="margin-top:48px;">
+    <li><b>Models reason over decades</b>, not retrieve chunks. Temporal, conditional, contested judgment is now computable.</li>
+    <li><b>Regulators accept explainability + human override + audit</b> as a governance pattern.</li>
+    <li><b>Private / on-prem / air-gapped inference is practical</b>: model-agnostic, sovereign-ready.</li>
+    <li><b>Ontario grants make pilots near-free</b> for many buyers: procurement friction removed.</li>
+    <li><b>9-to-5 leadership vs 24/7 models</b>: asynchronous management closes the gap. Judgment on demand.</li>
+  </ul>
+  <div class="kicker" style="background:#17324f;">Three curves crossed: reasoning + governance acceptance + private deployability. Inevitable, not opportunistic.</div>
+  <div class="footerbar"><span>www.wisdomtwin.ai/demo</span><span>WE SELL SPEED</span></div>
+</div>
+
+<!-- SLIDE 5 - PRODUCT -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Product</div>
+  <h1>The Judgment Platform:<br /><span class="accent">one press to move the decision forward.</span></h1>
+  <div class="cards">
+    <div class="card">
+      <h3>1. One-Press Huddle</h3>
+      <p>Press a button: live audio huddle with your management team, 24/7/365. No links. No calendar lag. Faster and easier than Zoom.</p>
+      <span class="tag">Visceral proof</span>
+    </div>
+    <div class="card">
+      <h3>2. Wisdom Twin</h3>
+      <p>Role-specific judgment, not a cloned person. Trained on 10-20 years of that role's calls, notes, email, docs, SOPs, and filings: principles, exceptions, thresholds, escalation rules.</p>
+      <span class="tag">Callable judgment</span>
+    </div>
+    <div class="card hero">
+      <h3>3. Trust Layer</h3>
+      <p>Cited evidence, source permissions, named human validation, safe decline, audit logs, human override. Private VPC / on-prem / air-gapped.</p>
+      <span class="tag">Why regulators say yes</span>
+    </div>
+  </div>
+  <div class="kicker">One press starts the decision. An authorized leader opens a huddle or async review with precedent, policy, and escalation path already in place.</div>
+</div>
+
+<!-- SLIDE 6 - HOW IT WORKS -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">How It Works</div>
+  <h1>Ingest &rarr; Twin &rarr; Operate.<br /><span class="accent">Evidence becomes judgment, under human control.</span></h1>
+  <div class="steps" style="margin-top:64px;">
+    <div class="step"><div class="n">1</div>
+      <h3>Ingest</h3>
+      <p>10-20 years of emails, meetings, docs, SOPs, filings. Immutable evidence objects with source-level permissions.</p>
+    </div>
+    <div class="step"><div class="n">2</div>
+      <h3>Twin</h3>
+      <p>Decision episodes reconstructed: why, not just what. The role is the unit, not the person. Nothing authoritative until a named human signs off.</p>
+    </div>
+    <div class="step"><div class="n">3</div>
+      <h3>Operate</h3>
+      <p>One-press huddles and async reviews. Cited answers, policy gates, confidence decomposition, safe decline. Every action audited. Decision &rarr; Audit &rarr; Smarter Twin.</p>
+    </div>
+  </div>
+  <div class="proofstrip">
+    <span class="badge">Live Demo</span>
+    <p>www.wisdomtwin.ai/demo: 1-4 minute audio huddles. <b>This is the meeting investors take the meeting for.</b></p>
+  </div>
+</div>
+
+<!-- SLIDE 7 - THE WEDGE -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">The Wedge in 45 Seconds &middot; Demo Scenario (Synthetic, Labeled)</div>
+  <h1>An RFP is due this week. The Sales Director can't attend.<br /><span class="accent">His twin does.</span></h1>
+  <div class="steps" style="margin-top:50px;">
+    <div class="step"><div class="n">1</div><p style="margin-top:16px;">CEO opens a one-press huddle: 60 pages of compliance requirements, no proposal team available.</p></div>
+    <div class="step"><div class="n">2</div><p style="margin-top:16px;">The Sales Director's Wisdom Twin joins instantly: trained on 20 years of proposals, RFPs, compliance calls, and email.</p></div>
+    <div class="step"><div class="n">3</div><p style="margin-top:16px;">The twin, with citations: <b>"We can do this. I can win this, this week."</b> Policy-gated, transcribed, auditable.</p></div>
+    <div class="step"><div class="n">4</div><p style="margin-top:16px;">Every interaction: source-cited, permission-aware, safe-decline enabled.</p></div>
+  </div>
+  <div class="proofstrip">
+    <span class="badge">Client Outcome</span>
+    <p>We used our own twin to win a government RFP for <b>Talent Lab</b>. Talent Lab's CEO said on our podcast the win generated <b>$5.5M in revenue</b> for her company in 2025. A client outcome on the record, not product revenue.</p>
+  </div>
+</div>
+
+<!-- SLIDE 8 - GOVERNANCE -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Trust Layer</div>
+  <h1>Governance is not a feature.<br /><span class="accent">It is the product.</span></h1>
+  <div class="cards" style="margin-top:40px;">
+    <div class="card"><h3>Cited evidence</h3><p>Every answer traces to authorized sources.</p></div>
+    <div class="card"><h3>Policy checks</h3><p>Gated against policy version and approval state.</p></div>
+    <div class="card"><h3>Named validation</h3><p>A human expert signs off. Accountability has a name.</p></div>
+  </div>
+  <div class="cards" style="margin-top:32px;">
+    <div class="card"><h3>Confidence decomposition</h3><p>The reasoning behind confidence, not one score.</p></div>
+    <div class="card"><h3>Safe decline</h3><p>Refuses when judgment is unsupported: <b>"I will get the human."</b></p></div>
+    <div class="card"><h3>Source-level permissions</h3><p>Access follows the evidence, not the model.</p></div>
+  </div>
+  <div class="kicker">DETERMINISTIC ENFORCEMENT OUTSIDE THE MODEL. The model cannot self-approve a restricted action.</div>
+</div>
+
+<!-- SLIDE 9 - WHY REGULATED -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Why Regulated Enterprises</div>
+  <h1>Regulated enterprises need speed,<br /><span class="accent">but cannot trade away control.</span></h1>
+  <div class="cols2">
+    <div>
+      <ul class="big">
+        <li><b>The deployment blocker:</b> financial services, insurance, legal, healthcare administration, and public-sector teams must preserve provenance, permissions, policy context, auditability, and named accountability.</li>
+        <li><b>What they can't use:</b> public copilots that hallucinate, leak data, or bypass approvals.</li>
+      </ul>
+      <div class="quote">Copy-pasting judgment into ChatGPT is a compliance violation waiting to happen. Governed speed must be provable to a risk committee.</div>
+    </div>
+    <div>
+      <div class="card hero" style="height:100%;">
+        <h3>The Trust Layer makes speed deployable.</h3>
+        <p style="margin-top:18px;">WisdomTwin is not generic chat. It is a governed decision-speed platform, built so a regulated buyer can say yes when public AI is off the table.</p>
+        <div style="margin-top:36px;">
+          <span class="pill">Private cloud</span>
+          <span class="pill">On-prem</span>
+          <span class="pill">Air-gapped</span>
+          <span class="pill">Model-agnostic</span>
+        </div>
+        <p style="margin-top:30px;">Banking &middot; Insurance &middot; Healthcare &middot; Legal &middot; Government &middot; Crown corporations</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 10 - COMPETITION -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Competition</div>
+  <h1>Everyone else retrieves. <span class="accent">We govern judgment.</span></h1>
+  <table class="matrix">
+    <tr><th>Capability</th><th>MS Copilot</th><th>ServiceNow</th><th>Palantir / Glean</th><th>WisdomTwin</th></tr>
+    <tr><td>Decision Episode Schema (why, not what)</td><td class="no">NO</td><td class="no">NO</td><td>PARTIAL</td><td class="yes">YES</td></tr>
+    <tr><td>Deterministic policy + permission enforcement outside the model</td><td>PROMPT</td><td>WORKFLOW</td><td>CUSTOM</td><td class="yes">CODE</td></tr>
+    <tr><td>Named human validation, safe decline, audit trail</td><td class="no">NO</td><td>TICKET</td><td>HUMAN LOOP</td><td class="yes">BUILT-IN</td></tr>
+    <tr><td>Private cloud / on-prem / air-gapped + model-agnostic</td><td>CLOUD</td><td>CLOUD</td><td>LIMITED</td><td class="yes">YES</td></tr>
+    <tr><td><b>Can it attend the meeting instead of a human, with cited judgment?</b></td><td>Summarizes</td><td>Routes</td><td>Analyzes</td><td class="yes">ATTENDS + GOVERNS</td></tr>
+  </table>
+  <div class="proofstrip" style="margin-top:36px;">
+    <span class="badge">Budget Reframe</span>
+    <p>Keyman insurance pays cash <b>after</b> the loss: months of disruption, no continuity. WisdomTwin preserves the judgment from <b>day one</b>, and the asset compounds. Operational hedging, not financial hedging.</p>
+  </div>
+</div>
+
+<!-- SLIDE 11 - MOAT -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Moat</div>
+  <h1>Every governed decision<br /><span class="accent">makes the organization faster.</span></h1>
+  <div class="flow" style="margin-top:44px;">
+    <div class="fbox">INGEST</div><span class="arr">&rarr;</span>
+    <div class="fbox">TWIN</div><span class="arr">&rarr;</span>
+    <div class="fbox">HUDDLE</div><span class="arr">&rarr;</span>
+    <div class="fbox">DECISION</div><span class="arr">&rarr;</span>
+    <div class="fbox">AUDIT</div><span class="arr">&rarr;</span>
+    <div class="fbox" style="background:#0e7c7b; color:#ffffff;">SMARTER TWIN</div>
+  </div>
+  <div class="cards" style="margin-top:44px;">
+    <div class="card"><h3>01 Decision Episode Schema</h3><p>Easy to copy the schema, hard to populate it.</p></div>
+    <div class="card"><h3>02 Role Wisdom Graph</h3><p>Captures why, not just what. Compounds per customer.</p></div>
+    <div class="card"><h3>03 Judgment Policy Engine</h3><p>Code the model can't talk past.</p></div>
+    <div class="card"><h3>04 Judgment Evaluation Dataset</h3><p>Unbuyable without the customer. The only asset that proves fidelity.</p></div>
+  </div>
+  <div class="kicker">A competitor can ship the interface in a quarter. They cannot ship years of validated judgment. No patents claimed, no exclusive data claimed: the moat is the compounding validation dataset plus the governance runtime.</div>
+</div>
+
+<!-- SLIDE 12 - MARKET -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Market</div>
+  <h1>Every regulated decision currently<br /><span class="accent">bottlenecked by synchronous meetings.</span></h1>
+  <div style="margin-top:34px;">
+    <span class="pill">Banking &amp; capital markets</span>
+    <span class="pill">Insurance</span>
+    <span class="pill">Healthcare / Pharma admin</span>
+    <span class="pill">Legal &amp; compliance</span>
+    <span class="pill">Government &amp; crown corporations</span>
+  </div>
+  <div class="grid2" style="margin-top:30px;">
+    <div class="card hero">
+      <h3>Government &amp; military: the extreme bottleneck</h3>
+      <p style="margin-top:14px;">Roughly <b>24% of GDP across the G20</b>, under <b>1% of AI token usage</b> today (internal estimate). Command and procurement decisions need seconds and minutes, not days of meetings. Sovereign buyers cannot use public chatbots: air-gapped is table stakes.</p>
+    </div>
+    <div class="card">
+      <h3>Serviceable market (internal model)</h3>
+      <p style="margin-top:14px;"><b>$6-12B SAM in 2026:</b> 20,000-30,000 mid-market and enterprise firms with 10+ executives (finance, healthcare, pharma, PE portfolio companies) at $250-400k annual. <b>Every 200 organizations at the $500k/yr tier is $100M ARR.</b> 20 validations prove the model.</p>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:28px;">
+    <div class="card"><h3>Beachhead: Toronto</h3><p>Densest concentration of regulated buyers plus AI talent in North America. Founder-led sales, tight loop.</p></div>
+    <div class="card"><h3>Expansion: MENA via Dubai</h3><p>EDM Association: 700+ firms, 30k data professionals. UAE government advisory channel. We ARE async management: already operating 24/7 across SF-Toronto and Dubai-Toronto.</p></div>
+  </div>
+</div>
+
+<!-- SLIDE 12B - CATEGORY MAP (2x2) -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Category Map</div>
+  <h1 style="font-size:64px;">Everyone sells async communication.<br /><span class="accent">We sell async decisioning.</span></h1>
+  <div style="display:grid; grid-template-columns: 1.25fr 1fr; gap:48px; margin-top:28px;">
+    <div>
+      <div style="text-align:center; font-size:22px; font-weight:800; letter-spacing:2px; color:#5a6a88; margin-bottom:10px;">SOLD AS SAAS &uarr;</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:220px 220px; gap:16px;">
+        <div class="card" style="padding:24px 28px; overflow:hidden;">
+          <h3 style="font-size:26px;">Async comms tools</h3>
+          <p style="font-size:21px; margin-top:8px; line-height:1.35;">Loom, Twist, Yac, GitLab handbook, Slack clips. <b>They cut meetings. They don't make decisions.</b></p>
+        </div>
+        <div class="card hero" style="padding:24px 28px; border:4px solid #5cd6c4; overflow:hidden;">
+          <h3 style="font-size:26px;">WISDOMTWIN &mdash; alone here</h3>
+          <p style="font-size:21px; margin-top:8px; line-height:1.35;">Async decisioning as SaaS: twins trained on 10-20 years of a role's judgment join a 2 AM huddle with audit trails, named validation, human override. Air-gapped deployable.</p>
+        </div>
+        <div class="card" style="padding:24px 28px; background:#eef0f6; overflow:hidden;">
+          <h3 style="font-size:26px; color:#5a6a88;">Creator &amp; industrial twins</h3>
+          <p style="font-size:21px; margin-top:8px; line-height:1.35; color:#5a6a88;">Antix avatars; Siemens (9.4% share), NVIDIA, Dassault: factories, cities, supply chains. <b>Zero leadership decision authority.</b></p>
+        </div>
+        <div class="card" style="padding:24px 28px; overflow:hidden;">
+          <h3 style="font-size:26px;">Internal exec-twin experiments</h3>
+          <p style="font-size:21px; margin-top:8px; line-height:1.35;">Uber "Dara AI", Toyota "AI Akio", Big-4 personas, Simile ($200M) x CVS, Viven ($35M). <b>Closest to judgment. Locked inside. Not products.</b></p>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:22px; font-weight:800; letter-spacing:2px; color:#5a6a88; margin-top:10px;"><span>&larr; ASYNC COMMUNICATION</span><span>ASYNC DECISIONING &rarr;</span></div>
+    </div>
+    <div>
+      <div class="card" style="padding:34px;">
+        <h3>What the map says</h3>
+        <p style="margin-top:14px;">Async comms proved the behavior, then stopped at communication. The serious judgment work is internal-only: it validates demand and is not for sale. Funding already flows to twins of people ($200M Simile, $35M Viven), all aimed at research, HR, comms.</p>
+      </div>
+      <div class="card hero" style="padding:34px; margin-top:24px;">
+        <h3>Why we hold the quadrant</h3>
+        <p style="margin-top:14px;">Governance is the product: evidence, permissions, audit, override. And the customer-specific judgment dataset is unbuyable without the customer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footerbar"><span>Skype proved video calls. Zoom killed friction and owned the category. Nobody owns async decisions. That quadrant is ours.</span><span>WISDOMTWIN.AI/DEMO</span></div>
+</div>
+
+<!-- SLIDE 12C - TAM 2026 vs 2030 -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">TAM &middot; 2026 vs 2030</div>
+  <h1 style="font-size:62px;">A $8-12B serviceable market today.<br /><span class="accent">A $50B+ category as retirements peak.</span></h1>
+  <div class="cols2" style="margin-top:30px;">
+    <div>
+      <div class="card">
+        <h3>2026: the behavior already exists</h3>
+        <div style="margin-top:16px;">
+          <span class="pill" style="font-size:19px; padding:8px 16px; margin:0 8px 10px 0;">KLARNA: CEO's digital self presented earnings</span>
+          <span class="pill" style="font-size:19px; padding:8px 16px; margin:0 8px 10px 0;">ZOOM: CEO avatar opened the earnings call</span>
+          <span class="pill" style="font-size:19px; padding:8px 16px; margin:0 8px 10px 0;">KPMG &middot; DELOITTE &middot; MCKINSEY: 10,000s of personas</span>
+          <span class="pill" style="font-size:19px; padding:8px 16px; margin:0 8px 10px 0;">SIMILE x CVS: 400,000 twins live</span>
+        </div>
+        <p style="font-size:22px; color:#5a6a88; margin-top:12px;">Public reports, 2025-2026. Proof the behavior exists; none of these own async management.</p>
+      </div>
+      <table class="tier" style="margin-top:24px;">
+        <tr><th style="padding:18px 22px;">Bottom-up SAM (internal model)</th><th style="padding:18px 22px;"></th></tr>
+        <tr><td style="padding:18px 22px;">Mid-market + enterprise firms, 10+ exec roles, regulated bias, NA + EU</td><td class="money" style="padding:18px 22px;">20-30k firms</td></tr>
+        <tr><td style="padding:18px 22px;">x ~$300k average ARR (locked ladder: $250k pilot to $500k+/yr)</td><td class="money" style="padding:18px 22px;">~$300k</td></tr>
+        <tr><td style="padding:18px 22px;"><b>2026 serviceable market, with 2-3x regulated premium</b></td><td class="money" style="padding:18px 22px;">$8-12B</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="card hero">
+        <h3>2030: the premium shifts to "who makes the call"</h3>
+        <p style="margin-top:16px;"><b>Demographics:</b> 10,000 Americans turn 65 daily; 18% of the US is 65+ by 2030 (US Census). Mass retirements drain institutional judgment.</p>
+        <p style="margin-top:14px;"><b>AI acceleration:</b> agents absorb workflows while leadership latency stays 9-to-5. Digital twins ~$3.9B (2024) to ~$62B (2034), analyst estimates.</p>
+        <p style="margin-top:14px;"><b>Expansion:</b> from exec teams to ops, legal, and sales leadership. Regulated sectors pay 2-3x for governance.</p>
+      </div>
+      <div class="tiles" style="margin-top:24px;">
+        <div class="tile"><div class="num" style="font-size:64px;">$50B+</div><div class="lbl">leadership-decisioning category by 2030 (internal estimate)</div></div>
+        <div class="tile"><div class="num" style="font-size:64px;">$100M</div><div class="lbl">ARR per 200 organizations at the $500k/yr tier</div></div>
+      </div>
+      <p style="font-size:18px; color:#5a6a88; margin-top:14px;">Market sizes: analyst estimates (ranges vary by source). SAM and category figures: internal model, labeled. Company facts: public reports, founder research 2026-08.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 13 - BUSINESS MODEL -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Business Model &middot; Tier Sheet v1.0 Locked</div>
+  <h1>One price per stage. <span class="accent">One unit: the role.</span></h1>
+  <div class="cols2">
+    <div>
+      <table class="tier">
+        <tr><th>Stage</th><th>Investment</th><th>Term</th><th>Roles</th></tr>
+        <tr><td>Judgment Assessment</td><td class="money">$0</td><td>Entry</td><td>Scoping</td></tr>
+        <tr><td>Concept Validation</td><td class="money">$50,000</td><td>2 months</td><td>10</td></tr>
+        <tr><td>Structured Pilot</td><td class="money">$250,000</td><td>6 months</td><td>50</td></tr>
+        <tr><td>Commercial</td><td class="money">$500,000+/yr</td><td>Annual</td><td>500</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="card" style="margin-top:40px;">
+        <h3>No tokens. No meters.</h3>
+        <p>You pay for judgment capacity deployed, never per question asked. Beyond included roles: $5,000 one-time setup + $500/month per role. Predictable budget: no usage punishment for adoption.</p>
+      </div>
+      <div class="card" style="margin-top:28px;">
+        <h3>Ontario reimbursement (pilot de-risk)</h3>
+        <p>COJG/OJAP can reimburse the client up to $250k per organization where eligible, making net pilot cost $50-90k. A reimbursement to the client, not a discount on enterprise value. Billing in USD.</p>
+      </div>
+    </div>
+  </div>
+  <div class="kicker">The $1M raise and the first revenue stage are the same number: 20 Concept Validations at $50k.</div>
+</div>
+
+<!-- SLIDE 14 - TRACTION -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Traction &middot; Honesty Builds Credibility</div>
+  <h1 style="font-size:72px; margin-bottom:22px;">Working demos. Pre-revenue.<br /><span class="accent">A clear next milestone.</span></h1>
+  <div class="tiles" style="margin-top:24px;">
+    <div class="tile" style="padding:28px;"><div class="num" style="font-size:66px;">0</div><div class="lbl">production users</div></div>
+    <div class="tile" style="padding:28px;"><div class="num" style="font-size:66px;">0</div><div class="lbl">paying customers</div></div>
+    <div class="tile" style="padding:28px;"><div class="num" style="font-size:66px;">$0</div><div class="lbl">product revenue: stated plainly</div></div>
+    <div class="tile" style="padding:28px;"><div class="num" style="font-size:66px;">5</div><div class="lbl">industry demo scenarios, founder-built end to end</div></div>
+  </div>
+  <div class="grid2" style="margin-top:26px;">
+    <div class="card" style="padding:30px 32px;">
+      <h3>What exists today</h3>
+      <p style="font-size:24px;">Multi-speaker audio huddles (recorded, transcribed) &middot; evidence timelines and decision episodes &middot; human validation flow &middot; role-scoped queries with citations and confidence decomposition &middot; policy denial and safe decline &middot; held-out evaluation framework. Live: www.wisdomtwin.ai/demo</p>
+    </div>
+    <div class="card" style="padding:30px 32px;">
+      <h3>Next milestone</h3>
+      <p style="font-size:24px;">Controlled lighthouse pilots: one organization, one critical role, one authorized evidence set, a named success gate.</p>
+    </div>
+  </div>
+  <div class="proofstrip" style="margin-top:26px; padding:24px 32px;">
+    <span class="badge">Client Outcome</span>
+    <p style="font-size:25px;">We used our own twin to win a government RFP for <b>Talent Lab</b>. Its CEO said on our podcast the win generated <b>$5.5M in revenue</b> for her company in 2025. Attributed, on the record, and never presented as product revenue.</p>
+  </div>
+</div>
+
+<!-- SLIDE 15 - TEAM -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">Team &middot; Builder + Compliance Architect</div>
+  <h1>We ARE asynchronous management<br /><span class="accent">before we sell it.</span></h1>
+  <div class="team">
+    <div class="member">
+      <h3>Roman Bodnarchuk</h3>
+      <div class="role">Co-Founder &amp; CEO &middot; SF-Toronto &middot; full-time, writes the code</div>
+      <ul>
+        <li>28 years turning executive judgment into systems: founded N5R in 1998; P&amp;G digital agency of record for 6 years</li>
+        <li>Enterprise scale-up operator across marketing and technology, 15 countries</li>
+        <li>Personally built the current WisdomTwin demos end to end; leads product, fundraising, and founder-led sales</li>
+      </ul>
+    </div>
+    <div class="member">
+      <h3>Stella Cabrera</h3>
+      <div class="role">Co-Founder, Governance &amp; Institutional Trust &middot; Dubai-Toronto</div>
+      <ul>
+        <li>20+ years with banks, fintechs, and regulators; Chairman &amp; Past President, RMA Toronto; co-author, RMA x OSFI operational resilience guidance</li>
+        <li>Senior Advisor &amp; MENA Lead, EDM Association (700+ firms, 30k data professionals); consulting to the UAE government; full-time on close of pre-seed</li>
+        <li>"We understand the risk committee because I already chair one."</li>
+      </ul>
+    </div>
+  </div>
+  <div class="kicker">Roman builds the twin; Stella makes it deployable. Incoming: Deborah Kaplan (former CRO, SAP Sustainability) joins as CFO post-financing. 24/7 coverage across time zones is not a slide claim: it is how we work.</div>
+</div>
+
+<!-- SLIDE 15B - 18-MONTH PLAN + SEED GATE -->
+<div class="slide" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">What $1M Buys &middot; 18-Month Plan</div>
+  <h1>The raise is a sales plan with dates.<br /><span class="accent">The seed gate is named in advance.</span></h1>
+  <div class="steps" style="margin-top:54px;">
+    <div class="step"><div class="n">M0</div>
+      <h3>Close</h3>
+      <p>$1M SAFE closes. Stella converts to full-time. Governance hardening and source connectors begin.</p>
+    </div>
+    <div class="step"><div class="n">M1-3</div>
+      <h3>First validations</h3>
+      <p>Evaluation dataset + customer-hosted deployment profiles shipped. First 5 Concept Validations signed in Toronto: founder-led, grant-assisted.</p>
+    </div>
+    <div class="step"><div class="n">M4-9</div>
+      <h3>Scale validations</h3>
+      <p>15-20 Concept Validations at $50k. Controlled lighthouse pilots run against named success gates measured on customer baselines.</p>
+    </div>
+    <div class="step"><div class="n">M10-18</div>
+      <h3>Convert</h3>
+      <p>Validations convert to $250k Structured Pilots and the first $500k/yr Commercial cohort. MENA channel opens via Dubai. <b>Seed-round gate: 3 lighthouse pilots passing held-out fidelity evaluation + $500k contracted. $1M = 18 months of founder-led runway.</b></p>
+    </div>
+  </div>
+  <div class="kicker">SEED GATE: 15-20 validations signed + lighthouse pilots passing held-out fidelity gates + first commercial conversions. When validations convert to $250k pilots, the seed prices itself. (Forward-looking plan, not a projection of measured results.)</div>
+  </div>
+
+<!-- SLIDE 16 - ASK + CLOSE -->
+<div class="slide dark" data-canvas-width="1920" data-canvas-height="1080">
+  <div class="eyebrow">The Ask</div>
+  <h1>Raising <span class="accent">$1M USD Pre-Seed</span> via SAFE.</h1>
+  <p class="sub" style="font-size:36px;"><b>The raise and the first revenue stage are the same number.</b> $1M funds the path to 15-20 Concept Validations at $50k, converting to $250k Structured Pilots and the first $500k/yr Commercial cohort.</p>
+  <div style="margin-top:40px;">
+    <span class="pill">Governance controls + audit infrastructure</span>
+    <span class="pill">Source connectors + evaluation dataset</span>
+    <span class="pill">Private VPC / on-prem / air-gapped</span>
+    <span class="pill">Forward-deployed engineering</span>
+    <span class="pill">Founder-led GTM: Toronto + MENA</span>
+  </div>
+  <div style="margin-top:64px;">
+    <p style="font-size:40px; font-weight:800; line-height:1.35;">Preserve institutional judgment before it walks out the door.<br />Every employee, backed by a Wisdom Twin.<br /><span style="color:#5cd6c4;">WE SELL SPEED. ONE PRESS MOVES THE DECISION FORWARD.</span></p>
+  </div>
+  <div class="nomeet"><div class="circ"></div><span>NO MEETINGS. Your twin goes so you don't have to.</span></div>
+  <div class="footerbar"><span>roman@wisdomtwin.ai &middot; www.wisdomtwin.ai/demo</span><span></span></div>
+</div>
+
+</body>
+</html>
