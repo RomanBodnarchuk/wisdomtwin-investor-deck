@@ -28,7 +28,9 @@ To add the filename aliases on Netlify (so the 404 paths below start working):
 
 Do not replace the HTML deck viewer at `/` unless you intend to. `index.html` in this folder is a snapshot of the live Netlify HTML as of 2026-08-14.
 
-## Backup host
+## Backup host (live, verified 2026-08-14, same MD5)
 
-GitHub Pages (this repo, once published):
 https://romanbodnarchuk.github.io/wisdomtwin-investor-deck/WisdomTwin-Investor-Deck.pdf
+
+Aliases on that host also 200:
+`/WisdomTwin-E4-Investor-Deck-2026-08-10.pdf` `/WisdomTwin-E4-Investor-Deck-2026-08-11.pdf` `/deck.pdf` `/wisdomtwin-deck.pdf`
