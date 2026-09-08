@@ -10,6 +10,14 @@ Every alias in this folder is a byte-identical copy of that file.
 
 https://wisdomtwin-deck.netlify.app/WisdomTwin-Investor-Deck.pdf
 
+## Investor meeting page (2026-09-08)
+
+https://wisdomtwin-deck.netlify.app/invest/  
+GitHub Pages mirror: https://romanbodnarchuk.github.io/wisdomtwin-investor-deck/invest/
+
+`/investor` and `/investors` redirect to `/invest/`.
+Canonical production URL remains https://www.wisdomtwin.ai/invest after Lovable publish.
+
 ## How this Netlify site is deployed
 
 No linked Git repo was found. Local Netlify state (`~/.netlify/state.json`) only has an unrelated site id. Treat production as a **manual drag-drop** (or `ntl deploy --prod --dir=.`) onto site `wisdomtwin-deck`.

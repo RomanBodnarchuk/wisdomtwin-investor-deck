@@ -28,3 +28,23 @@
   from = "/wisdomtwin-deck.pdf"
   to = "/WisdomTwin-Investor-Deck.pdf"
   status = 200
+
+[[redirects]]
+  from = "/investor"
+  to = "/invest/"
+  status = 301
+
+[[redirects]]
+  from = "/investor/"
+  to = "/invest/"
+  status = 301
+
+[[redirects]]
+  from = "/investors"
+  to = "/invest/"
+  status = 301
+
+[[redirects]]
+  from = "/investors/"
+  to = "/invest/"
+  status = 301
