@@ -18,6 +18,8 @@ GitHub Pages mirror: https://romanbodnarchuk.github.io/wisdomtwin-investor-deck/
 `/investor` and `/investors` redirect to `/invest/`.
 Canonical production URL remains https://www.wisdomtwin.ai/invest after Lovable publish.
 
+One-pager (print/send): https://romanbodnarchuk.github.io/wisdomtwin-investor-deck/one-pager/
+
 ## How this Netlify site is deployed
 
 No linked Git repo was found. Local Netlify state (`~/.netlify/state.json`) only has an unrelated site id. Treat production as a **manual drag-drop** (or `ntl deploy --prod --dir=.`) onto site `wisdomtwin-deck`.
