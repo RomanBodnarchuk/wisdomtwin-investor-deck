@@ -1,19 +1,22 @@
-# WisdomTwin investor deck (GitHub Pages mirror)
+# WisdomTwin investor deck mirror
 
-Deck version: **E10 FINAL — 2026-10-14** (WisdomTwin, Inc., Delaware C-Corp · USD $1M post-money SAFE)
-MD5: `a2dfc1fdab63a33ecc2081f15db239cb` · 20 pages · 6.7 MB
+Current approved artifact: **E10.1, October 16, 2026**.
+SHA-256: `d96d87fea85aa2349e2ed3c2d6258f446c664fc50a3d6420d72486c5c69a2919`.
+21 pages, 238282 bytes. Source approval and retrieval evidence remain in AI-HQ.
 
-All deck URLs on this host serve the E10 bytes, including historical E4/E9-named aliases:
-- https://romanbodnarchuk.github.io/wisdomtwin-investor-deck/WisdomTwin-Investor-Deck.pdf
-- https://romanbodnarchuk.github.io/wisdomtwin-investor-deck/WisdomTwin-Investor-Deck-E10-FINAL-2026-10-14.pdf
-- /deck.pdf · /wisdomtwin-deck.pdf · /WisdomTwin-E4-Investor-Deck-2026-08-10.pdf · /WisdomTwin-E4-Investor-Deck-2026-08-11.pdf
+## Public entry points
+- index.html and the legacy deck-e10.html route embed WisdomTwin-Investor-Deck.pdf.
+- invest/index.html links to the same canonical PDF.
+- Every existing PDF filename is retained as a compatibility alias with exactly the same E10.1 bytes, including older date/version filenames. Those filenames do not identify historical content.
+- No forms, gate policies, booking settings, agent knowledge or other websites are changed.
 
-E10 HTML viewer: https://romanbodnarchuk.github.io/wisdomtwin-investor-deck/deck-e10.html
-Investor page: https://romanbodnarchuk.github.io/wisdomtwin-investor-deck/invest/
-One-pager: https://romanbodnarchuk.github.io/wisdomtwin-investor-deck/one-pager/
+## Verification
+Run `python3 verify_release.py` before release.
+After publishing, download every served PDF and compare its SHA-256 against the value above. Check desktop/mobile viewing, direct download and investor overview navigation.
+A repository check does not prove that Netlify or GitHub Pages has deployed the change.
 
-**Canonical production deck URL** (used in all investor materials) remains the Netlify host:
-https://wisdomtwin-deck.netlify.app/WisdomTwin-Investor-Deck.pdf
-Netlify deploys by manual drag-drop of the local `deck-host/` folder (see wisdomtwin-raise/outreach/deck-host/README.md), staged with the same E10 bytes.
-
-One deck version in public at any time (raise stop-list rule). Older versions live only in local `archive/` folders.
+## Rollback
+Original source files and per-file hashes are retained privately at:
+The private October 26 AI-HQ release evidence (not included in this public repository)
+Current production base commit: bacf5211dab3bd6853f5e73ee07cbc3e34e2adc1.
+Preserve that deployment for rollback. No historical source assets are deleted from version history.
